@@ -1,0 +1,306 @@
+	/* Two-column layout (from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_two_columns) */
+	* {
+        color: #292929;
+        font-family: "Trebuchet MS", Helvetica, sans-serif;
+      }
+
+        *,
+        *:before,
+        *:after {
+        box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+          }
+  img{
+      max-width: 100%;
+      height: auto;
+  }
+  
+      /*----------------------------------------------------------------------------------------------------- */
+      /* For the collapsible sidebar (from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav_push_opacity) */
+      .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+        text-align: center;
+      }
+  
+      .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+      }
+  
+      .sidenav a:hover {
+        color: #f1f1f1;
+      }
+  
+      .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+      }
+  
+      #main {
+        transition: margin-left .5s;
+        padding: 16px;
+      }
+  
+      @media screen and (max-height: 450px) {
+        .sidenav {padding-top: 15px;}
+        .sidenav a {font-size: 18px;}
+      }
+
+
+/*titles styling*/
+
+.title{
+    font-size: 1.4rem;
+    font-size: clamp(1.4rem, 10vw, 2.2rem);
+    font-family: 'Inknut Antiqua', "Trebuchet MS", Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: 700;
+    
+    color: white;
+
+    line-height: 1em;
+    margin: 0 0 0 16px;
+  
+}
+
+.menu{
+  display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    background-color: #111;
+    color: white;
+    padding: 16px 16px;
+    
+}
+
+.subtitle{
+    font-size: 1.2rem;
+    font-size: clamp(1.2rem, 5vw, 1.6rem);
+    font-family: 'Alata',  "Trebuchet MS", Helvetica, sans-serif;
+    text-transform: uppercase;
+
+}
+
+/*btn*/
+.btn{
+    padding: 8px 16px;
+    border: 0;
+    background-color: #292929;
+    color: white;
+    cursor: pointer;
+    font-family: 'Alata',  "Trebuchet MS", Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    border-radius: 4px;
+    text-decoration: none;
+}
+
+.btnNew{
+    padding: 24px 32px;
+    font-size: 1.4rem;
+}
+
+.btnStart{
+  display: block;
+    width: fit-content;
+    margin: auto;
+}
+.btnWide{
+  padding: 8px 42px;
+}
+.btnLine{
+    background-color: white;
+    color: #292929;
+    border: 2px solid #292929;
+}
+
+.btn:hover{
+    background-color: #eee;
+    color: #292929;
+}
+
+.txtRight{
+    text-align: right;
+}
+
+.containerCenter{
+    text-align: center;
+    margin: 0 auto 20px;
+    margin:0 auto clamp(20px, 5vw, 2em) ;
+
+
+}
+
+.staticContent{
+  font-size: 1.2em;
+  max-width: 1400px;
+  margin: auto;
+  padding: 0 16px;
+  line-height: 1.6em;
+
+}
+
+.staticContent p{
+  margin-bottom: 12px;
+}
+
+.flexContainer{
+    display: flex;
+    justify-content: space-around;
+}
+
+.txtCenter{
+  text-align: center;
+}
+
+/*rows and columns*/
+
+.row{
+  display: flex;
+  max-width: 1600px;
+  margin: auto;
+  justify-content: space-between;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: stretch;
+}
+
+.row > *{
+    flex: 100%;
+    margin: 10px;
+}
+
+
+
+  /*checked box things*/
+
+  input[type="checkbox"] {
+    /* Add if not using autoprefixer */
+    -webkit-appearance: none;
+    /* Remove most all native input styles */
+    appearance: none;
+    /* For iOS < 15 */
+    background-color: white;
+    /* Not removed via appearance */
+    margin: 0;
+  
+    font: inherit;
+    color: currentColor;
+    width: 1.15em;
+    height: 1.15em;
+    border: 0.15em solid currentColor;
+    border-radius: 0.15em;
+    transform: translateY(-0.075em);
+  
+  display: grid;
+    place-content: center;
+  }
+  
+  input[type="checkbox"]::before {
+    content: "";
+    width: 0.65em;
+    height: 0.65em;
+    clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+    transform: scale(0);
+    transform-origin: bottom left;
+    transition: 120ms transform ease-in-out;
+    box-shadow: inset 1em 1em purple;
+    /* Windows High Contrast Mode */
+    background-color: CanvasText;
+  }
+  
+  input[type="checkbox"]:checked::before {
+    transform: scale(1);
+  }
+  
+  input[type="checkbox"]:focus {
+    outline: max(2px, 0.15em) solid currentColor;
+    outline-offset: max(2px, 0.15em);
+  }
+  
+  input[type="checkbox"]:disabled {
+    color: grey;
+    cursor: not-allowed;
+  }
+.form-control{
+    line-height: 1.1;
+    display: grid;
+    grid-template-columns: 1em auto;
+    gap: 0.5em;
+}
+
+  .containerCheckbox{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: stretch;
+  }
+
+  @media screen and (max-width: 600px) {
+    .row{
+        display: block
+    }
+    .containerCheckbox{
+        display: block;
+    }
+    .containerCheckbox label{
+        margin-bottom: 12px;
+    }
+  }
+
+  .dice img{
+    max-width: 150px;
+    height: auto;
+  }
+
+  .result-container{
+    overflow: scroll;
+	overflow-x: hidden;
+    height: 80vh;
+  }
+  
+  
+  
+  /* scrollbar */
+  /* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey; 
+  border-radius: 2px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black; 
+  border-radius: 2px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #C6C6C6; 
+}
+
+  

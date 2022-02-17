@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="css/style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Alata&family=Inknut+Antiqua:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+	<!-- collapsible sidebar when it opens -->
+	<div id="mySidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+		<a href="bookshop_simulator.html">Instructions</a>
+		<a href="game.html">Game</a>
+	</div>
+
+
+	<!-- main / game-related content -->
+	<div id="main">
+		<div class="menu">
+			<!-- sidebar icon when it's closed -->
+			<span style="font-size:30px;cursor:pointer;color: white;" onclick="openNav()">&#9776; Menu</span>
+			<h1 class="title">Bookstore simulator</h1>
+		</div>
+		<!-- row/column structure, title -->
+		<div class="staticContent">
+			<p>This simulator is based on the solo micro-RPG created by Oliver Darkshire of Sotheran's. You can click the image of the original instructions below to see the original tweet.
+                </p>
+            </div>
+		<div class="row">
+			
+
+			<!--  Second column for event description output -->
+			<div class="column">
+				<!-- New Game button -->
+				<div class="containerCenter">
+					<button onclick="new_game();" class="btn btnNew"> New Game </button>
+				</div>
+
+				<!--  Game modes -->
+				<h2 class="subtitle">Optional Game Modes</h2>
+
+				<div class="containerCheckbox">
+					<!--  Day mode: click once to roll all the events of the day -->
+					<label class="form-control"> <input type="checkbox" id="day_mode_checkbox">  Day roll
+					</label>
+
+					<!--  Rattie mode: enable emergency teabags (saves some patience)-->
+					<label class="form-control">  <input type="checkbox" id="rattie_mode_checkbox"> Rattie mode</label>
+	
+					<!--  Hard mode: roll an additional die in the background to determine if flooding happens (instant game over) -->
+					<label class="form-control"> <input type="checkbox" id="hard_mode_checkbox">  Hard mode</label>
+
+					<!--  Nightmare mode: chance of flodding AND customers trying (and obviously failing) to be funny -->
+					<label class="form-control"> <input type="checkbox" id="nightmare_mode_checkbox"> Nightmare mode </label>
+
+					<!--  Extra realism: play for 30 days and try to get 30 money -->
+					<label class="form-control"> <input type="checkbox" id="extra_mode_checkbox"> Extra realism </label>
+				</div>
+
+			
+
+				<!-- Button to roll for events (2d6). Event by event, unless day mode is enabled  -->
+				<h2 class="subtitle">Roll for the next event/day</h2>
+				
+
+				<!--  Image of dice (changes when rolled) -->
+				<div class="containerCenter flexContainer dice">
+					<img id="die_display1" src="images/dice1.png">
+					<img id="die_display2" src="images/diceb1.png">
+				</div>
+
+				<div class="containerCenter">
+					<button onclick="game_enabled();" class="btn"> Roll </button>
+				</div>
+
+			
+					<!-- Button to refill patience to max. value  -->
+					<h2 class="subtitle">Spend some money to refill your patience to 10</h2>
+					<!-- New Game button -->
+					<div class="containerCenter">
+						<button onclick="sin_sin_sin();" class="btn btnWide"> Sin </button>
+					</div>
+		
+
+			
+			</div>
+
+
+
+            <div class="column">
+                <h2 class=" txtCenter subtitle">Results:</h2>
+				<!--  Event descriptions are printed into this div -->
+				<div id="demo2" class="result-container">
+				</div>
+            </div>
+		</div>
+
+		<footer class="txtRight">
+			<p>This website was lovingly created by three fans of the Sotheran's Twitter account. We are in no way affiliated with Sotheran's and will happily take this website down upon request. We can be contacted at <a href="mailto:crowleysratties@gmail.com">crowleysratties@gmail.com</a></a> </p>
+		</footer>
+	</div>
+
+
+<script>
+
+		//script necessary to get the collapsible sidebar working (from https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_sidenav_push_opacity)
+		function openNav() {
+			document.getElementById("mySidenav").style.width = "100%";
+			document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+		}
+
+		function closeNav() {
+			document.getElementById("mySidenav").style.width = "0";
+			document.body.style.backgroundColor = "white";
+		}
+</script>
+
+<script src="gamescript.js"></script>
+
+
+
+
+</body>
+
+</html>
